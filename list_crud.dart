@@ -1,5 +1,9 @@
 import 'dart:io';
 
+int getInt(){
+  int.parse(stdin.readLineSync() ?? "0");
+  return 0;
+}
 void main(){
   stdout.write("Enter length : ");
   int length = int.parse(stdin.readLineSync() ?? "0");
