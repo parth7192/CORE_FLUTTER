@@ -1,22 +1,22 @@
 import 'dart:io';
 
-int Sum({required List<int> list}) {
-  int a = 0;
+int sum({required List<int> list}) {
+  int total = 0;
   list.forEach((element) {
-    a += element;
+    total += element;
   });
-  return sum;
+  return total;
 }
 
 void main() {
-  List<int> myList = List.generate(5, (index) => index);
+  List<int> myList =
+      List.generate(5, (index) => 0);
 
-  myList.forEach((element) {
-    stdout.write("Enter Number [${myList.indexOf(element)}] : ");
-    element = int.parse(stdin.readLineSync() ?? "0");
-  });
-  print("\n");
-  print("________________________________________________");
-  print("Enter Any Number's =   ${Sum(list: myList)}\t\t\t|");
-  print("________________________________________________");
+  for (int i = 0; i < 5; i++) {
+    stdout.write("ENTER NUMBER [$i] : ");
+    myList[i] = int.parse(stdin.readLineSync() ?? "0");
+  }
+
+  print("ENTERED NUMBERS: $myList");
+  print("SUM OF ENTERED NUMBERS: ${sum(list: myList)}");
 }
